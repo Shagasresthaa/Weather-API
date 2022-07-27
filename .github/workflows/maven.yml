@@ -23,4 +23,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
+      env:
+        PSQL_DB_URL: ${{ secrets.PSQL_DB_URL }}
+        PSQL_DB_USR: ${{ secrets.PSQL_DB_USR }}
+        PSQL_DB_PASS: ${{ secrets.PSQL_DB_PASS }}
+        APPLICATION_PORT: ${{ secrets.APPLICATION_PORT }}
       run: mvn clean install
