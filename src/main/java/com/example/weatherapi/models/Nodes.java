@@ -1,4 +1,4 @@
-package com.example.weatherapi;
+package com.example.weatherapi.models;
 
 import javax.persistence.Column;  
 import javax.persistence.Entity;

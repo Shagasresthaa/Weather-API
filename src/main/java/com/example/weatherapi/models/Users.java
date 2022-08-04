@@ -1,4 +1,4 @@
-package com.example.weatherapi;
+package com.example.weatherapi.models;
 
 import javax.persistence.Column;  
 import javax.persistence.Entity;
@@ -7,10 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;  
 import javax.persistence.Table;
 
+import org.hibernate.annotations.DynamicInsert;
+
+@DynamicInsert
 @Entity
 @Table(name="Users")
 
-public class Users{
+public class Users {
 	
 	@Id
 	@Column
@@ -22,9 +25,9 @@ public class Users{
 	private String userEmail;
 	@Column
 	private String userPass;
-	@Column(columnDefinition="boolean default false")
+	@Column(columnDefinition = "boolean default false")
 	private Boolean userAdmin;
-	@Column(columnDefinition="boolean default false")
+	@Column(columnDefinition = "boolean default false")
 	private Boolean userNodeCreate;
 
 	// Getter Methods
