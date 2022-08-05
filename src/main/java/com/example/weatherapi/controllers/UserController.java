@@ -22,6 +22,9 @@ public class UserController {
 	// Post Actions
 	
 	// Create a new user
+	// Throw exception if required fields are missing
+	// Throw exception if user already exists
+	// Else return user
 	@PostMapping("/users")
 	public Users createUser(@RequestBody Users user) throws Exception {
 		try{
@@ -38,6 +41,10 @@ public class UserController {
 	}
 
 	// Update an existing user
+	// Throw exception if user not found
+	// Throw exception if required fields are missing
+	// Throw exception if email is invalid
+	// Else return user
 	@PostMapping("/users/{id}")
 	public Users updateUser(@PathVariable int id, @RequestBody Users user) throws Exception {
 		try {
@@ -100,7 +107,12 @@ public class UserController {
 			final HttpHeaders httpHeaders= new HttpHeaders();
     		httpHeaders.setContentType(MediaType.APPLICATION_JSON);
 			userService.deleteUser(id);
-			return new ResponseEntity<String>("{\"message\": \"User Deleted Successfully\"}", httpHeaders, HttpStatus.ACCEPTED);
+			try {
+                Users node = userService.getUserById(id);
+                return new ResponseEntity<String>("{\"message\": \"User Deletion Failed\"}", httpHeaders, HttpStatus.CONFLICT);
+            } catch(NodeNotFoundException e) {
+                return new ResponseEntity<String>("{\"message\": \"User Deleted Successfully\"}", httpHeaders, HttpStatus.ACCEPTED);
+            }
 		} catch(UserNotFoundException e){
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
 		} catch(Exception e){

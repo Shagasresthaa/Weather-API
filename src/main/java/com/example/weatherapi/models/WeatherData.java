@@ -16,7 +16,10 @@ public class WeatherData{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
-	private int id;
+	private long id;
+
+	@Column(name="nodeid")
+	private long nodeId;
 
 	@Column(name="temperature")
 	private double temperature;
@@ -26,9 +29,6 @@ public class WeatherData{
 
 	@Column(name="pressure")
 	private double pressure;
-
-	@Column(name="windspeed")
-	private double windspeed;
 
 	@Column(name="uvindex")
 	private double uvindex;
@@ -49,8 +49,12 @@ public class WeatherData{
 	private String nodeTimeStamp;
 
 	// Getter Methods
-	public int getId() {
+	public long getId() {
 		return id;
+	}
+
+	public long getNodeId() {
+		return nodeId;
 	}
 
 	public double getTemperature() {
@@ -63,10 +67,6 @@ public class WeatherData{
 
 	public double getPressure() {
 		return pressure;
-	}
-
-	public double getWindspeed() {
-		return windspeed;
 	}
 
 	public double getUvindex() {
@@ -98,6 +98,10 @@ public class WeatherData{
 		this.id = id;
 	}
 
+	public void setNodeId(long nodeId) {
+		this.nodeId = nodeId;
+	}
+
 	public void setTemperature(double temperature) {
 		this.temperature = temperature;
 	}
@@ -108,10 +112,6 @@ public class WeatherData{
 
 	public void setPressure(double pressure) {
 		this.pressure = pressure;
-	}
-
-	public void setWindspeed(double windspeed) {
-		this.windspeed = windspeed;
 	}
 
 	public void setUvindex(double uvindex) {

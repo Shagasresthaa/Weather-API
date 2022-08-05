@@ -7,4 +7,6 @@ import com.example.weatherapi.models.Nodes;
 @Repository
 public interface NodesRepository extends JpaRepository<Nodes, Long> {
 
+    Nodes findByNodeId(long nodeId);
+
 }

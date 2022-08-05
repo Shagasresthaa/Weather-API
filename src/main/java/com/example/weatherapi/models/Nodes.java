@@ -2,126 +2,131 @@ package com.example.weatherapi.models;
 
 import javax.persistence.Column;  
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;  
 import javax.persistence.Table;
 
+import org.hibernate.annotations.DynamicInsert;
+
+@DynamicInsert
 @Entity
 @Table(name="Nodes")
 
 public class Nodes{
 	
 	@Id
-	@Column(columnDefinition="varchar(64)")
-	private String node_id;
+	@Column
+	private long nodeId;
 	
-	@Column(name="node_ipaddress")
-	private String node_ipaddress;
+	@Column(name="nodeIpaddress")
+	private String nodeIpaddress;
 
-	@Column(name="node_macaddress")
-	private String node_macaddress;
+	@Column(name="nodeMacAddress")
+	private String nodeMacAddress;
 
 	@Column(columnDefinition="varchar(64)")
-	private String node_api_key;
+	private String nodeApiKey;
 
-	@Column(name="node_gps_latitude")
-	private String node_gps_latitude;
+	@Column(name="nodeGpsLatitude")
+	private String nodeGpsLatitude;
 
-	@Column(name="node_gps_longitude")
-	private String node_gps_longitude;
+	@Column(name="nodeGpsLongitude")
+	private String nodeGpsLongitude;
 
-	@Column(name="node_gps_altitude")
-	private String node_gps_altitude;
+	@Column(name="nodeGpsAltitude")
+	private String nodeGpsAltitude;
 
 	@Column(columnDefinition="boolean default false")
-	private Boolean node_active;
+	private Boolean nodeActive;
 
 	@Column(columnDefinition="boolean default false")	
-	private Boolean node_ota_flag;
+	private Boolean nodeOtaFlag;
 
 	@Column(columnDefinition="boolean default false")
-	private Boolean node_permission_flag;
+	private Boolean nodePermissionFlag;
 
 
 	// Getter Methods
 	
-	public String getNodeId() {
-		return node_id;
+	public long getNodeId() {
+		return nodeId;
 	}
 
 	public String getNodeIpaddress() {
-		return node_ipaddress;
+		return nodeIpaddress;
 	}
 
-	public String getNodeMacaddress() {
-		return node_macaddress;
+	public String getNodeMacAddress() {
+		return nodeMacAddress;
 	}
 
 	public String getNodeApiKey() {
-		return node_api_key;
+		return nodeApiKey;
 	}
 
 	public String getNodeGpsLatitude() {
-		return node_gps_latitude;
+		return nodeGpsLatitude;
 	}
 
 	public String getNodeGpsLongitude() {
-		return node_gps_longitude;
+		return nodeGpsLongitude;
 	}
 
 	public String getNodeGpsAltitude() {
-		return node_gps_altitude;
+		return nodeGpsAltitude;
 	}
 
 	public Boolean getNodeActive() {
-		return node_active;
+		return nodeActive;
 	}
 
 	public Boolean getNodeOtaFlag() {
-		return node_ota_flag;
+		return nodeOtaFlag;
 	}
 
 	public Boolean getNodePermissionFlag() {
-		return node_permission_flag;
+		return nodePermissionFlag;
 	}
 
 	// Setter Methods
 	
-	public void setNodeId(String node_id) {
-		this.node_id = node_id;
+	public void setNodeId(long nodeId) {
+		this.nodeId = nodeId;
 	}
 
-	public void setNodeIpaddress(String node_ipaddress) {
-		this.node_ipaddress = node_ipaddress;
+	public void setNodeIpaddress(String nodeIpaddress) {
+		this.nodeIpaddress = nodeIpaddress;
 	}
 
-	public void setNodeMacaddress(String node_macaddress) {
-		this.node_macaddress = node_macaddress;
+	public void setNodeMacAddress(String nodeMacAddress) {
+		this.nodeMacAddress = nodeMacAddress;
 	}
 
-	public void setNodeApiKey(String node_api_key) {
-		this.node_api_key = node_api_key;
+	public void setNodeApiKey(String nodeApiKey) {
+		this.nodeApiKey = nodeApiKey;
 	}
 
-	public void setNodeGpsLatitude(String node_gps_latitude) {
-		this.node_gps_latitude = node_gps_latitude;
+	public void setNodeGpsLatitude(String nodeGpsLatitude) {
+		this.nodeGpsLatitude = nodeGpsLatitude;
 	}
 
-	public void setNodeGpsLongitude(String node_gps_longitude) {
-		this.node_gps_longitude = node_gps_longitude;
+	public void setNodeGpsLongitude(String nodeGpsLongitude) {
+		this.nodeGpsLongitude = nodeGpsLongitude;
 	}
 
-	public void setNodeGpsAltitude(String node_gps_altitude) {
-		this.node_gps_altitude = node_gps_altitude;
+	public void setNodeGpsAltitude(String nodeGpsAltitude) {
+		this.nodeGpsAltitude = nodeGpsAltitude;
 	}
 
-	public void setNodeActive(Boolean node_active) {
-		this.node_active = node_active;
+	public void setNodeActive(Boolean nodeActive) {
+		this.nodeActive = nodeActive;
 	}
 
-	public void setNodeOtaFlag(Boolean node_ota_flag) {
-		this.node_ota_flag = node_ota_flag;
+	public void setNodeOtaFlag(Boolean nodeOtaFlag) {
+		this.nodeOtaFlag = nodeOtaFlag;
+	}
+
+	public void setNodePermissionFlag(Boolean nodePermissionFlag) {
+		this.nodePermissionFlag = nodePermissionFlag;
 	}
 
 }
