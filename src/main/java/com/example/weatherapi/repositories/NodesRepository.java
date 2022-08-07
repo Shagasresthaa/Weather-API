@@ -9,4 +9,6 @@ public interface NodesRepository extends JpaRepository<Nodes, Long> {
 
     Nodes findByNodeId(long nodeId);
 
+    void deleteByNodeId(long id);
+
 }

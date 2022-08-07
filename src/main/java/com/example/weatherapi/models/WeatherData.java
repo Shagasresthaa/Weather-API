@@ -33,8 +33,14 @@ public class WeatherData{
 	@Column(name="uvindex")
 	private double uvindex;
 
-	@Column(name="airqualityindex")
-	private double airqualityindex;
+	@Column(name="pm25Levels")
+	private double pm25Levels;
+
+	@Column(name="coLevels")
+	private double coLevels;
+
+	@Column(name="ammoniaLevels")
+	private double ammoniaLevels;
 
 	@Column(name="nodeGPSLatitude")
 	private double nodeGPSLatitude;
@@ -73,8 +79,16 @@ public class WeatherData{
 		return uvindex;
 	}
 
-	public double getAirqualityindex() {
-		return airqualityindex;
+	public double getPm25Levels() {
+		return pm25Levels;
+	}
+
+	public double getCoLevels() {
+		return coLevels;
+	}
+
+	public double getAmmoniaLevels() {
+		return ammoniaLevels;
 	}
 
 	public double getNodeGPSLatitude() {
@@ -118,8 +132,16 @@ public class WeatherData{
 		this.uvindex = uvindex;
 	}
 
-	public void setAirqualityindex(double airqualityindex) {
-		this.airqualityindex = airqualityindex;
+	public void setPm25Levels(double pm25Levels) {
+		this.pm25Levels = pm25Levels;
+	}
+
+	public void setCoLevels(double coLevels) {
+		this.coLevels = coLevels;
+	}
+
+	public void setAmmoniaLevels(double ammoniaLevels) {
+		this.ammoniaLevels = ammoniaLevels;
 	}
 
 	public void setNodeGPSLatitude(double nodeGPSLatitude) {

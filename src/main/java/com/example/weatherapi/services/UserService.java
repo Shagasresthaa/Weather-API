@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.regex.*;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,6 +41,7 @@ public class UserService {
 			throw new InvalidEmailException("Invalid Email");
 		}
 		else {
+			user.setUserAccessKey(apiKeyGenerator());
 			return userRepository.save(user);
 		}
     }
@@ -104,5 +106,13 @@ public class UserService {
 		return user;
 	}
 
+
+	// Other Methods
+	
+	// Generate random API Key
+    // Additional Work Required:
+    public String apiKeyGenerator(){
+        return RandomStringUtils.randomAlphanumeric(64);
+    }
 
 }	

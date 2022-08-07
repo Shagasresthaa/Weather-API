@@ -25,6 +25,8 @@ public class Users {
 	private String userEmail;
 	@Column
 	private String userPass;
+	@Column
+	private String usserAccessKey;
 	@Column(columnDefinition = "boolean default false")
 	private Boolean userAdmin;
 	@Column(columnDefinition = "boolean default false")
@@ -45,6 +47,10 @@ public class Users {
 
 	public String getUserPass() {
 		return userPass;
+	}
+
+	public String getUserAccessKey() {
+		return usserAccessKey;
 	}
 
 	public Boolean getUserAdmin() {
@@ -72,6 +78,10 @@ public class Users {
 	public void setUserPass(String userPass) {
 		this.userPass = userPass;
 	}	
+
+	public void setUserAccessKey(String usserAccessKey) {
+		this.usserAccessKey = usserAccessKey;
+	}
 
 	public void setUserAdmin(Boolean userAdmin) {
 		this.userAdmin = userAdmin;

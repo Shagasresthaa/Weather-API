@@ -19,7 +19,7 @@ public class NodeController {
     @Autowired
     private NodeService nodeService;
 
-    //POST Methods
+    // POST Methods
 
     // Create a new node
     // Throw exception if required fields are missing
@@ -39,7 +39,7 @@ public class NodeController {
         }
     }
 
-    //GET Methods
+    // GET Methods
 
     // Get all nodes
     // Return list of nodes
@@ -85,7 +85,7 @@ public class NodeController {
         }
     }
 
-    //DELETE Methods
+    // DELETE Methods
 
     // Delete a node
     // Throw exception if node not found
