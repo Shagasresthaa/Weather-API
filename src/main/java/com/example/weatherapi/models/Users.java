@@ -26,7 +26,7 @@ public class Users {
 	@Column
 	private String userPass;
 	@Column
-	private String usserAccessKey;
+	private String userAccessKey;
 	@Column(columnDefinition = "boolean default false")
 	private Boolean userAdmin;
 	@Column(columnDefinition = "boolean default false")
@@ -50,7 +50,7 @@ public class Users {
 	}
 
 	public String getUserAccessKey() {
-		return usserAccessKey;
+		return userAccessKey;
 	}
 
 	public Boolean getUserAdmin() {
@@ -79,8 +79,8 @@ public class Users {
 		this.userPass = userPass;
 	}	
 
-	public void setUserAccessKey(String usserAccessKey) {
-		this.usserAccessKey = usserAccessKey;
+	public void setUserAccessKey(String userAccessKey) {
+		this.userAccessKey = userAccessKey;
 	}
 
 	public void setUserAdmin(Boolean userAdmin) {
